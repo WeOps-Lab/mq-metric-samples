@@ -159,6 +159,8 @@ func main() {
 					collector = newExporter()
 					setFirstCollection(true)
 					prometheus.MustRegister(collector)
+					// Remove Go collector
+					prometheus.Unregister(prometheus.NewGoCollector())
 					setConnectedQMgr(true)
 
 					if !isConnectedOnce() {
