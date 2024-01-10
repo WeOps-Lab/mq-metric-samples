@@ -89,7 +89,7 @@ start listener(TCP)
 
 | **指标ID**                                                         | **指标中文名**               | **维度ID**                              | **维度含义**             | **单位**  |
 |------------------------------------------------------------------|-------------------------|---------------------------------------|----------------------|---------|
-| ibmmq_qmgr_uptime                                                | IBMMQ服务已运行时长            | description, hostname, platform, qmgr | 描述, 主机名, 平台, 队列管理器名称 | s       |
+| ibmmq_qmgr_uptime                                                | IBMMQ队列管理器已运行时长         | description, hostname, platform, qmgr | 描述, 主机名, 平台, 队列管理器名称 | s       |
 | ibmmq_qmgr_active_listeners                                      | IBMMQ活动监听器数量            | description, hostname, platform, qmgr | 描述, 主机名, 平台, 队列管理器名称 | -       |
 | ibmmq_qmgr_channel_initiator_status                              | IBMMQ通道初始化状态            | description, hostname, platform, qmgr | 描述, 主机名, 平台, 队列管理器名称 | -       |
 | ibmmq_qmgr_command_server_status                                 | IBMMQ命令服务器状态            | description, hostname, platform, qmgr | 描述, 主机名, 平台, 队列管理器名称 | -       |
