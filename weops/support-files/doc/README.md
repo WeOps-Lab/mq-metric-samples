@@ -24,7 +24,7 @@
 | --ibmmq.client                | 以客户端形式连接(开关参数), 默认关闭                 | 否        |                 |
 | IBMMQ_CONNECTION_CONNNAME     | ibmmq服务连接地址(环境变量), 注意填写形式 `ip(port)` | 是        | 127.0.0.1(1414) |
 | IBMMQ_CONNECTION_QUEUEMANAGER | ibmmq队列管理器名称(环境变量)                   | 是        | QM1             |
-| IBMMQ_CONNECTION_CHANNEL      | ibmmq连接通道名称(环境变量)                    | 是        | SVRCONN         |
+| IBMMQ_CONNECTION_CHANNEL      | ibmmq连接通道名称(环境变量)                    | 是        | SERVER          |
 | IBMMQ_CONNECTION_USER         | ibmmq连接账户名称(环境变量)                    | 否        | admin           |
 | IBMMQ_CONNECTION_PASSWORD     | ibmmq连接密码(环境变量)                      | 否        |                 |
 | --log.level                   | 日志级别                                 | 否        | info            |
@@ -61,7 +61,7 @@ def listener(TCP) trptype(tcp) port(1414)
 start listener(TCP)
 ```
 
-定义通道时 `SVRCONN` 是填入探针参数 IBMMQ_CONNECTION_CHANNEL的通道名称, `mqm` 是填入探针参数 IBMMQ_CONNECTION_USER 已存在的账号名称
+定义通道时 `SERVER` 是填入探针参数 IBMMQ_CONNECTION_CHANNEL的通道名称, `mqm` 是填入探针参数 IBMMQ_CONNECTION_USER 已存在的账号名称
 
 可以选择验证方式, 一般不建议取消验证  
 - 正常验证
@@ -170,6 +170,10 @@ start listener(TCP)
 #### weops_IBMMQ_exporter 5.5.2
 
 - weops调整
+
+#### weops_IBMMQ_exporter 5.5.2
+
+- 优化文档配置用户说明
 
 添加“小嘉”微信即可获取IBMMQ监控指标最佳实践礼包，其他更多问题欢迎咨询
 
