@@ -90,6 +90,12 @@ start listener(TCP)
     REFRESH SECURITY TYPE(CONNAUTH)
     ```
 
+3. 监控队列配置  
+如果需要监控队列，有可能监控探针报错  
+> MAXHANDS attribute on queue manager needs increasing. Current value = 256. Recommended minimum based on number of monitored queues = 300    
+
+若出现这种报错请设置   
+`alter qmgr maxhands (300)`
 
 
 ### 指标简介
