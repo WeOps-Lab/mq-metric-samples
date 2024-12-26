@@ -19,20 +19,20 @@
 ### 参数说明
 
 
-| **参数名**                       | **含义**                               | **是否必填** | **使用举例**        |
-|-------------------------------|--------------------------------------|----------|-----------------|
-| --ibmmq.httpListenHost        | 插件监听地址(下发请保持默认)                      | 是        | 127.0.0.1       |
-| --ibmmq.httpListenPort        | 插件监听端口(下发请保持默认)                      | 是        | 9601            |
-| --ibmmq.client                | 以客户端形式连接(开关参数), 默认关闭                 | 否        |                 |
-| --ibmmq.usePublications       | 资源发布控制开关, 默认使用true                   | 否        |                 |
-| --ibmmq.useStatus             | 获取所有STATUS开关, 默认使用false              | 否        |                 |
-| IBMMQ_CONNECTION_CONNNAME     | ibmmq服务连接地址(环境变量), 注意填写形式 `ip(port)` | 是        | 127.0.0.1(1414) |
-| IBMMQ_CONNECTION_QUEUEMANAGER | ibmmq队列管理器名称(环境变量)                   | 是        | QM1             |
-| IBMMQ_CONNECTION_CHANNEL      | ibmmq连接通道名称(环境变量)                    | 是        | SERVER          |
-| IBMMQ_CONNECTION_USER         | ibmmq连接账户名称(环境变量)                    | 否        | admin           |
-| IBMMQ_CONNECTION_PASSWORD     | ibmmq连接密码(环境变量)                      | 否        |                 |
-| IBMMQ_OBJECTS_QUEUES          | 过滤监控队列正则表达式, 默认使用 `*` 获取所有队列         | 是        | *               |
-| --log.level                   | 日志级别                                 | 否        | info            |
+| **参数名**                       | **含义**                                       | **是否必填** | **使用举例**        |
+|-------------------------------|----------------------------------------------|----------|-----------------|
+| --ibmmq.httpListenHost        | 插件监听地址(下发请保持默认)                              | 是        | 127.0.0.1       |
+| --ibmmq.httpListenPort        | 插件监听端口(下发请保持默认)                              | 是        | 9601            |
+| --ibmmq.client                | 以客户端形式连接(开关参数), 默认关闭                         | 否        |                 |
+| --ibmmq.usePublications       | 资源发布控制开关, 默认使用true, 如果提示版本低的日志需要将该参数设置为false | 否        |                 |
+| --ibmmq.useStatus             | 获取所有STATUS开关, 默认使用false                      | 否        |                 |
+| IBMMQ_CONNECTION_CONNNAME     | ibmmq服务连接地址(环境变量), 注意填写形式 `ip(port)`         | 是        | 127.0.0.1(1414) |
+| IBMMQ_CONNECTION_QUEUEMANAGER | ibmmq队列管理器名称(环境变量)                           | 是        | QM1             |
+| IBMMQ_CONNECTION_CHANNEL      | ibmmq连接通道名称(环境变量)                            | 是        | SERVER          |
+| IBMMQ_CONNECTION_USER         | ibmmq连接账户名称(环境变量)                            | 否        | admin           |
+| IBMMQ_CONNECTION_PASSWORD     | ibmmq连接密码(环境变量)                              | 否        |                 |
+| IBMMQ_OBJECTS_QUEUES          | 过滤监控队列正则表达式, 默认使用 `*` 获取所有队列                 | 是        | *               |
+| --log.level                   | 日志级别                                         | 否        | info            |
 
 ### 使用指引
 1. 配置IBM MQ redistributable client
