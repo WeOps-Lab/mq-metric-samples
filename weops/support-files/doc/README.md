@@ -32,6 +32,7 @@
 | IBMMQ_CONNECTION_USER         | ibmmq连接账户名称(环境变量)                            | 否        | admin           |
 | IBMMQ_CONNECTION_PASSWORD     | ibmmq连接密码(环境变量)                              | 否        |                 |
 | IBMMQ_OBJECTS_QUEUES          | 过滤监控队列正则表达式, 默认使用 `*` 获取所有队列                 | 是        | *               |
+| MQCCSID                       | 队列管理器默认编码，如无报错不需要在探针侧指定                      | 否        | 819             |
 | --log.level                   | 日志级别                                         | 否        | info            |
 
 ### 使用指引
@@ -68,7 +69,16 @@ def listener(TCP) trptype(tcp) port(1414)
 start listener(TCP)
 ```
 
-定义通道时 `SERVER` 是填入探针参数 IBMMQ_CONNECTION_CHANNEL的通道名称, `mqm` 是填入探针参数 IBMMQ_CONNECTION_USER 已存在的账号名称
+定义通道时 `SERVER` 是填入探针参数 IBMMQ_CONNECTION_CHANNEL的通道名称, `mqm` 是填入探针参数 IBMMQ_CONNECTION_USER 已存在的账号名称  
+
+
+**注意**  
+部分低版本可能会有编码异常问题，如果在linux服务器上远程采集Windows上的IBMMQ，出现以下错误：  
+`level=error msg="StatusGetReply error : MQGET: MQCC = MQCC_WARNING [1] MQRC = MQRC_NOT_CONVERTED [2119]"`   
+
+请尝试将采集器监控探针MQCCSID环境变量修改为 `1208`。    
+
+
 
 可以选择验证方式, 一般不建议取消验证  
 - 正常验证
@@ -211,6 +221,10 @@ start listener(TCP)
 
 - 兼容IBMMQ 9.x以下版本采集
 - 增加队列过滤开关，采集队列类指标
+
+#### weops_IBMMQ_exporter 5.5.4
+
+- 增加MQCCSID变量，支持采集端指定编码
 
 添加“小嘉”微信即可获取IBMMQ监控指标最佳实践礼包，其他更多问题欢迎咨询
 
